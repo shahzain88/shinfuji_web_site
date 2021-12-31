@@ -1,0 +1,92 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="canonicalize" href="https://zainsyed.pythonanywhere.com/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="有限会社新富士(shinfuji co.,ltd)は輸出輸入を主に行う会社です。世界中に日本の技術、文化、歴史、を届ける輸出輸入専門の会社です。">
+    <meta name="author" content="有限会社新富士">
+    <meta name="keywords" content="有限会社新富士,輸出輸入,shinfuji,shinfuji co ltd">
+
+    <!-- bad way of calling static files -->
+    <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+    <link rel="stylesheet" href="{%static 'styles.css'%}">
+    <link rel="shortcut icon" type="image/png" href="{%static '有限会社新富士.png'%}"/>
+
+    <title>有限会社新富士 | 輸出輸入 | shinfuji co ltd | shinfuji | 新富士 </title>
+    <!--shinfuji co ltd-->
+    <!--有限会社　新富士-->
+    <!--代表者 ダストギール セイエド グラーム-->
+</head>
+
+<body>
+    <div class="wrepper">
+        <header>
+            <h2><a href="{% url 'home:list'%}"><img title=“有限会社新富士(shinfuji co.,ltd)” alt= "有限会社新富士(shinfuji co.,ltd)"src="{%static '有限会社新富士.png'%}"></a></h2>
+
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <form class="logout-link" action="{%url 'accounts:logout'%}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">LogOut</button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="{%url 'articles:create'%}" class="highlight">New Article</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'contact:view_list'%}" class="highlight">View Contact</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{%url 'accounts:login'%}">LogIn</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'accounts:signup'%}">SignUp</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+        </header>
+        <nav class="banner">
+            <ul>
+                <a href="{% url 'home:list' %}">
+                    <li>ホーム</li>
+                </a>
+                <a href="{% url 'gaiyou:list' %}">
+                    <li>会社概要</li>
+                </a>
+                <a href="{% url 'shoukai:list' %}">
+                    <li>事業紹介</li>
+                </a>
+                <a href="{% url 'articles:list' %}">
+                    <li>事例紹介</li>
+                </a>
+                <a href="{% url 'QandA:list' %}">
+                    <li>ご質問</li>
+                </a>
+                <a href="{% url 'contact:create_list' %}">
+                    <li>お問い合わせ</li>
+                </a>
+                <a href="{% url 'privacy:list' %}">
+                    <li>プライバシーポリシ</li>
+                </a>
+                <a href="{% url 'recruitment:list' %}">
+                    <li>採用情報</li>
+                </a>
+            </ul>
+        </nav>
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    <script src="{%static 'app.js'%}"></script>
+</body>
+
+</html>

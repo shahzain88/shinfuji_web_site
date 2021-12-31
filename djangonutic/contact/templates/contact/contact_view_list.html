@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>contcts</h1>
+<div class="articles">
+    {% for contact in contacts%}
+    <a href="{% url 'contact:view_detail' slug=contact.slug %}">
+        <div class="article">
+            <h2>{{contact.name}}</h2>
+            <p>{{contact.snippet}}</p>
+            <h5>{{contact.date}}</h5>
+        </div>
+    </a>
+    {% endfor%}
+</div>
+{% endblock content %}

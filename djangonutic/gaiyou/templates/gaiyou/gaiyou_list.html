@@ -1,0 +1,50 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>会社概要</h1>
+<div class="gaiyou">
+    <table>
+    <tr class = "gaiyou_1">
+        <td class="side">会社名</td>
+        <td>新富士</td>
+    </tr>
+    <tr class="gaiyou_2">
+        <td class="side">代表者</td>
+        <td>ダスタギール　セイエド　グラーム</td>
+    </tr>
+    <tr class="gaiyou_1">
+        <td class="side">所在地</td>
+        <td>埼玉県越谷市  <a href="{% url 'gaiyou:map' %}"><span>地図</span></a></td>
+    </tr>
+    <tr class="gaiyou_2">
+        <td class="side">電話番号</td>
+        <td>080 3127 9781</td>
+    </tr>
+    <tr class="gaiyou_1">
+        <td class="side">設立</td>
+        <td>2005年01月01日</td>
+    </tr>
+    <tr class="gaiyou_2">
+        <td class="side">事業内容</td>
+        <td>輸出入</td>
+    </tr>
+    <tr class="gaiyou_1">
+        <td class="side">資本金</td>
+        <td>2500万</td>
+    </tr>
+    <tr class="gaiyou_2">
+        <td class="side">従業員数</td>
+        <td>1000人</td>
+    </tr>
+    <tr class="gaiyou_1">
+        <td class="side">主要取引先</td>
+        <td>日本輸出入協会</td>
+    </tr>
+    <tr class="gaiyou_2">
+        <td class="side">取引銀行</td>
+        <td>三井住友銀行　、関東銀行</td>
+    </tr>
+    </table>
+
+</div>
+{% endblock content %}
