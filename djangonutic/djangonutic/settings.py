@@ -17,7 +17,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -27,7 +26,8 @@ SECRET_KEY = 'django-insecure-&#%w_jt!75*au+x!4uku9tx5(b^ch+e79p@7ei!_@=s!gfbie&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["zainsyed.pythonanywhere.com","https://zainsyed.pythonanywhere.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "zainsyed.pythonanywhere.com",
+                 "https://zainsyed.pythonanywhere.com", "https://www.zainsyed.pythonanywhere.com"]
 
 
 # Application definition
@@ -62,22 +62,43 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'djangonutic.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["/home/ZainSyed/portofolio_django/djangonutic/templates"],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
+# template if in python any where
+TEMPLATES = []
+if not DEBUG:
+    # in pythonanywhere
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': ["/home/ZainSyed/portofolio_django/djangonutic/templates"],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
         },
-    },
-]
+    ]
+else:
+    # in localhost
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': ["templates"],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]
+
 
 WSGI_APPLICATION = 'djangonutic.wsgi.application'
 
@@ -136,7 +157,11 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# in hosting mode
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# in localmode
+# STATIC_ROOT = '/static/'
 
 
 # need to add for imgs
