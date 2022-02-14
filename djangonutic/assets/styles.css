@@ -23,7 +23,7 @@ a,a:hover,a:active{
 }
 
 .wrepper{
-    max-width: 960px;
+    max-width: 100%;
     margin:0 auto;
 }
 
@@ -41,7 +41,8 @@ header{
 }
 
 nav{
-    justify-self:end;
+    /* justify-self:end; */
+    text-align:center;
 }
 nav li{
     display:inline-block;
@@ -300,11 +301,10 @@ a.highlight:hover{
 
 div.gaiyou{
     text-align: center;
-    margin-left: 40px;
-    margin: 0 40px;
 }
 
 table{
+    display:inline-block;
     border-spacing: 0 15px;
     padding:5px;
     margin:5px;
