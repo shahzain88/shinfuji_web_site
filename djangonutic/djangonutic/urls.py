@@ -14,12 +14,13 @@ from privacy import views as privacy_views
 from home import views as home_views
 
 urlpatterns = [
+    path('', home_views.home_list),
     path('admin/', admin.site.urls),
     path('accounts/', include("accounts.urls")),
     path('articles/', include("articles.urls")),
     path('gaiyou/', include("gaiyou.urls")),
     path('shoukai/', include("shoukai.urls")),
-    path('QandA/', include("QandA.urls")),
+    path('qanda/', include("QandA.urls")),
     path('contact/', include("contact.urls")),
     path('privacy/', include("privacy.urls")),
     path('home/', include("home.urls")),
@@ -30,7 +31,7 @@ urlpatterns = [
     path('robots.txt', views.view_robot_txt),
     # path('', views.homepage),
     # path('', include("articles.urls")),
-    path('', home_views.home_list, name="home"),
+
 
 
 ]

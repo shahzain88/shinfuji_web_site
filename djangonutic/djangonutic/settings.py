@@ -24,10 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&#%w_jt!75*au+x!4uku9tx5(b^ch+e79p@7ei!_@=s!gfbie&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1", "zainsyed.pythonanywhere.com",
                  "https://zainsyed.pythonanywhere.com", "https://www.zainsyed.pythonanywhere.com"]
+
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -152,10 +154,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # need to add
-STATICFILES_DIRS = (
-    BASE_DIR / "static",
-    os.path.join(BASE_DIR, 'assets'),
-)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets/'),
+]
 
 # in hosting mode
 if not DEBUG:
