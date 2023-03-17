@@ -255,7 +255,13 @@ button.menu {
     right: 3px;
 }
 
+.creat-article {
+    text-align: center;
+}
+
 .site-form {
+    display: inline-block;
+    text-align: left;
     margin-top: 6px;
     border: 1px solid #44afb5;
     padding: 20px;
@@ -498,7 +504,7 @@ img.shoukai_main_img {
 img.shoukai_sec_main_img {
     position: absolute;
     left: 10%;
-    top: 200% !important;
+    top: 210% !important;
     display: inline-block;
     max-width: 30%;
 
@@ -532,11 +538,7 @@ img.article_imgs {
     }
 
     img.shoukai_main_img {
-        position: absolute;
-        top: 50%;
-        left: 15%;
-        max-width: 400px;
-        z-index: -1;
+        max-width: 100%;
     }
 }
 
@@ -660,6 +662,10 @@ p.QandA_A_p {
 
 }
 
+/* @media all and (max-width: 979px) {
+
+} */
+
 @media all and (max-width: 925px) {
     td {
         padding: 5px 10px;
@@ -678,10 +684,31 @@ p.QandA_A_p {
         padding: 0;
     }
 
+    img.shoukai_sec_main_img {
+        top: 300% !important;
+    }
 
+    body>div>div>div:nth-child(2)>div>p:nth-child(10) {
+        position: relative;
+        top: 300px;
+        padding-bottom: 20px;
+    }
 
 }
 
+@media all and (max-width: 765px) {
+    img.shoukai_sec_main_img {
+        top: 330% !important;
+    }
+
+}
+
+@media all and (max-width: 635px) {
+    img.shoukai_sec_main_img {
+        top: 360% !important;
+        max-width: 40%;
+    }
+}
 
 
 ::-webkit-scrollbar {
@@ -711,6 +738,34 @@ p.QandA_A_p {
         max-width:100%;
     }
 } */
+
+@media all and (max-width:500px) {
+    img.shoukai_sec_main_img {
+        max-width: 50%;
+    }
+}
+
+@media all and (max-width:498px) {
+    img.shoukai_sec_main_img {
+        top: 368% !important;
+        max-width: 50%;
+    }
+}
+
+@media all and (max-width:425px) {
+    img.shoukai_sec_main_img {
+        top: 380% !important;
+        max-width: 50%;
+    }
+}
+
+@media all and (max-width: 379px) {
+    img.shoukai_sec_main_img {
+        top: 320% !important;
+    }
+
+}
+
 @media all and (max-width: 376px) {
     td {
         padding: 2px 5px;
@@ -729,5 +784,16 @@ p.QandA_A_p {
         padding: 0;
     }
 
+    img.shoukai_main_img {
+        position: static;
+        max-width: 100%;
+    }
 
+
+
+    body>div>div>div:nth-child(2)>div>p:nth-child(10) {
+        position: relative;
+        top: 340px;
+        padding-bottom: 20px;
+    }
 }
