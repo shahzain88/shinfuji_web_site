@@ -27,7 +27,7 @@ urlpatterns = [
     path('recruitment/', include("recruitment.urls")),
     path('about/', views.about),
     path('404/', views.view_404),
-
+    path('manifest.json', views.view_manifest_json),
     path('robots.txt', views.view_robot_txt),
     # path('', views.homepage),
     # path('', include("articles.urls")),
